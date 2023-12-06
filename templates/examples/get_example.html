@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+  <!-- and it's easy to individually load additional languages -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+  <script>hljs.highlightAll();</script>
+</head>
+<body>
+  <a href="/">Назад</a>
+  <h4>{{.Name}}</h4>
+  <form action="/examples/{{ .ID }}/edit">
+    <button>Редактировать</button>
+  </form>
+  <form action="/examples/{{ .ID }}/delete">
+    <button>Удалить</button>
+  </form>
+  <hr>
+  <p style="white-space: pre-wrap;">{{.Description}}</p>
+  <br>
+  <pre><code>{{.Code}}</code></pre>
+  {{if .Output}}
+  <p>Вывод:</p>
+  <pre><code class="language-plaintext">{{.Output}}</code></pre>
+  {{end}}
+</body>
+</html>

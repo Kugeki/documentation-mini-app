@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <link href="https://unpkg.com/sakura.css/css/sakura.css" rel="stylesheet" type="text/css">
+  <script>
+
+  </script>
+</head>
+<body>
+<form method="post" id="edit_form">
+  <label for="name">Название</label>
+  <input name="name" id="name" type="text" value="{{ .Name }}"/>
+
+  <label for="desc">Описание</label>
+  <input name="description" id="desc" type="text" value="{{ .Description }}"/>
+
+  <label for="code">Код</label>
+  <textarea name="code" id="code" form="edit_form">{{ .Code }}</textarea>
+
+  <label for="output">Вывод</label>
+  <input name="output" id="output" type="text" value="{{ .Output }}"/>
+  <br>
+  <button type="submit">Сохранить</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <link href="https://unpkg.com/sakura.css/css/sakura.css" rel="stylesheet" type="text/css">
+  <script>
+
+  </script>
+</head>
+<body>
+<h2>Вы уверены, что хотите удалить эту статью "{{ .Name }}"?</h2>
+<form method="post" action="/articles/{{ .ID }}/delete">
+  <button type="submit">Да</button>
+</form>
+<form action="/articles/{{ .ID }}">
+  <button type="submit">Нет</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
+</head>
+<body>
+    <form action="/documentations/create">
+        <button>Создать документацию</button>
+    </form>
+    {{- range .}}
+    <h1>
+        {{- if .ID -}}
+        <a href="/documentations/{{ .ID }}">
+        {{- end -}}
+            {{.Name}}
+        {{- if .ID -}}
+        </a>
+        {{- end -}}
+    </h1>
+    <form action="/documentations/{{ .ID }}/articles/create">
+        <button>Создать статью</button>
+    </form>
+    <ul>
+        {{- range .Articles}}
+            <li><a href="/articles/{{.ID}}">{{.Name}}</a></li>
+        {{- end}}
+    </ul>
+    {{- end}}
+</body>
+</html>
